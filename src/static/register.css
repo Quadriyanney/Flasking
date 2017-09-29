@@ -1,0 +1,27 @@
+body {
+  background-color: #eee;
+}
+
+.form-register {
+  max-width: 600px;
+  padding: 15px;
+}
+.form-register-heading {
+  margin-top: 20px;
+}
+.form-register .form-register-heading,
+.form-register .checkbox {
+  margin-bottom: 20px;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}

@@ -1,0 +1,32 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+	<br><br>
+	<h1>Welcome, {{session.username}}</h1>
+	<br>
+	<a href="/add_article" class="btn btn-success">Add Article</a>
+	<br>
+	<br>
+	{% if articles.count() > 0 %}
+	<table class="table table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{% for article in articles %}
+			<tr>
+				<td>{{article.title}}</td>
+				<td>{{article.author}}</td>
+				<td>{{article.time_published}}</td>
+				<td><a href="edit_article/{{article._id}}" class="btn btn-default pullright">Edit</a></td>
+				<td><a href="/delete_article/{{article._id}}" class="btn btn-danger">Delete</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+		<p>No Articles Found</p>
+	{% endif %}
+{% endblock %}
